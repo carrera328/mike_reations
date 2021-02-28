@@ -1,0 +1,51 @@
+.nav-bar {
+    height: 12.35vh;
+    background-color: #9673A6;
+    margin: 0;
+    padding: 0; 
+    width: 100vw;
+    display:flex;
+    align-items: center; 
+  }
+  
+img {
+    height: 100%;
+  }
+  
+.lobster {
+    font-family: 'lobster';
+    color: white;
+}
+
+.nav-bar-logo {
+    margin: 0 auto; 
+    padding: 0;
+    height: fit-content;
+    width: 100vw;
+    font-size:3rem;
+    position: absolute;
+    width: fit-content;
+    position: absolute;
+    left: 20%;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.nav-bar-no-logo {
+    margin: 0 auto; 
+    padding: 0;
+    height: fit-content;
+    width: 100vw;
+    font-size:3rem;
+    position: absolute;
+    width: fit-content;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+ 
