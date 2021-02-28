@@ -2,29 +2,28 @@
     border-bottom: solid;
     border-width: thin;
     border-color: #b3b3b3;
-    /* background-color: green; */
     padding-bottom: 1rem;
 }
 
 .product {
-    
     display: flex;
     flex-direction: row;
-    
 }
+
+
 .main-col {
     display: flex;
     flex-direction: column;
     width: 400%;
-    
 }
 .product-header {
-    font-size: 1.25em;
-    
+    font-size: 1em;
+    font-weight: 600;
 }
+
 .product-desc {
     margin-top: 0;
-    font-size: 1.25em;
+    font-size: 1em;
     color: #B3B3B3; 
     align-content: center;
     flex-basis: 60%;
@@ -32,7 +31,8 @@
 
 .product-price {
     margin-top: 0;
-    font-size: 1.25em;
+    font-size: 1em;
+    font-weight: 600;
 }
 
 .plc-img {
@@ -41,8 +41,6 @@
     display: block;
     width: 100%;
     margin: 0 auto;
-    
-
 }
 
 .desc-container {
@@ -50,3 +48,5 @@
     position: relative;
     right: 0;
 }
+
+

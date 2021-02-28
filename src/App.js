@@ -13,7 +13,7 @@ function App() {
   return (
     <Router>
       <Route exact path="/" component={Home}/> 
-      <Route exact path="/menu" component={Menu}/>
+      <Route exact path="/menu" render={props => <Menu heading="Inventory"/>}/>
     </Router> 
   );
 }

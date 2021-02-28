@@ -1,23 +1,31 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Product from '../components/Product'
+import {data} from '../components/db';
 import '../App.css';
 import '../styles/Menu.css'
 
-
 function Menu(props) {
+    console.log(data);
     const heading = props.heading || 'Products';
-    const desc = props.desc || 'Warm flaky, southern-style biscuits.';
+    const products = [];
+    const  [loading, setLoading] = useState(false);
+    const [readyForCheckout, setReady] = useState(false);
+       
+
     return (
        <Fragment>
            <Header showLogo={true}/>
            <div className= 'products-container'>
             <h1 className='helvetica menu-head'>{heading}</h1>
-            <Product name='Chicken Wings' price={5.25}/>
-            <Product name='Enchiladas' price={3.35}/>
+            {data.map(product => (
+                <Product 
+                name={product.name} 
+                desc={product.description} 
+                price={product.price.toFixed(2)}/> 
+            ))}
+            
            </div>
-           
-           
        </Fragment>
     )
 }

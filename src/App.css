@@ -32,5 +32,6 @@ body {
 .helvetica {
   font-family: 'helvetica';
   color: black;
+  font-weight: 400;
 }
 
