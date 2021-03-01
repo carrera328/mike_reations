@@ -13,10 +13,8 @@ function ToggleMenu(props) {
             <h1 className='toggle-message helvetica'>{message}</h1>
             <i class="fa fa-chevron-circle-down"></i>
            </div>
-            {picklistValues.map((e) => <Fragment>
-                <br></br>
-                <input type="checkbox"/>
-                {e.Name}</Fragment>)}
+            {picklistValues.map(e => <div>
+                <input type='checkbox'/>{e.Name}</div>)}
        </div> 
     )
 }
