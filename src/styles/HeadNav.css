@@ -1,0 +1,58 @@
+.container {
+    
+    padding: 0.85rem;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+    display: grid;
+    align-items:center;
+    position: relative;
+    grid-template-columns: 1fr 4fr;
+    /* background-color: yellow; */
+    text-align: center;
+    border-bottom: solid;
+    border-width: thin;
+    border-color: #b3b3b3;
+
+}
+
+.fal {
+    
+    padding-left: .25rem;
+    padding-right: 1rem;
+    margin: 0;
+    font-size: 1.85em;
+    height: fit-content;
+    /* background-color: red; */
+    text-align: center;
+    font-weight:525;
+    vertical-align: middle;
+
+    
+    
+}
+
+.fa-arrow-left:before {
+    text-align: center;
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+
+
+.head {
+    display: inline-block;
+    position: relative;
+    text-align:center;
+    /* background-color: purple; */
+    padding:0;
+    margin: 0;
+    width: fit-content; /* Need a specific value to work */
+    font-weight: 700;
+    
+}
+i {
+    vertical-align: middle;
+    height: 100%;
+}
+
