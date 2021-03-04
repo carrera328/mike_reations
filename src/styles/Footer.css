@@ -1,0 +1,38 @@
+.sticky-shell {
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    bottom: 0;
+    width: 100vw;
+    height: 6rem;
+    border-radius: 0;
+    padding: 0;
+    border: none;
+    font-size: 1.75rem;
+    z-index: 0;    
+}
+
+.attached-btn {
+    padding: 0;
+    border: none;
+    position: absolute;
+    top: 1.75%;
+}
+
+.footer-container {
+    position: fixed;
+    padding: 0;
+    border: none;
+    border-top: solid;
+    border-width: thin;
+    border-color: #b3b3b3;
+    margin: 0;
+    height: 100%;
+    width: 100%; 
+    background-color: white;
+    display:flex;
+    justify-content: center;
+    
+}

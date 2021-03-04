@@ -10,9 +10,7 @@
     grid-template-columns: 1fr 4fr;
     /* background-color: yellow; */
     text-align: center;
-    border-bottom: solid;
-    border-width: thin;
-    border-color: #b3b3b3;
+    
 
 }
 
@@ -21,7 +19,7 @@
     padding-left: .25rem;
     padding-right: 1rem;
     margin: 0;
-    font-size: 1.85em;
+    font-size: 1.5em;
     height: fit-content;
     /* background-color: red; */
     text-align: center;
@@ -54,5 +52,6 @@
 i {
     vertical-align: middle;
     height: 100%;
+    color: charcoal;
 }
 

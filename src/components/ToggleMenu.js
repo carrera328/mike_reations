@@ -11,10 +11,19 @@ function ToggleMenu(props) {
        <div className='toggle-container'>
            <div className='toggle-head'>
             <h1 className='toggle-message helvetica'>{message}</h1>
-            <i class="fa fa-chevron-circle-down"></i>
+            <i class="fal fa-chevron-circle-down"></i>
            </div>
-            {picklistValues.map(e => <div>
-                <input type='checkbox'/>{e.Name}</div>)}
+           <div class="toggle-body">
+               {picklistValues.map((e, i) => {
+                return (
+                <div className='checkbox-container'>
+                    <i class="far fa-square-full"></i>
+                    <h3 className='helvetica checkbox-label'>{e.Name}</h3>
+                </div>
+                );
+                
+            })}
+           </div>
        </div> 
     )
 }

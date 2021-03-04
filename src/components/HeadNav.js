@@ -11,7 +11,7 @@ function HeadNav(props) {
             <Link className='route-link' to='/menu'>
                 <i className="fal fa-arrow-left"></i>
             </Link>
-            <h1 className="head helvetica">{header}</h1>
+            <h2 className="head helvetica">{header}</h2>
         </div>
     )
 }

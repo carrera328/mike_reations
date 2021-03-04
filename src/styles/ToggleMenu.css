@@ -14,9 +14,6 @@
     background: rgba(179,179,179,0.25);
     padding: 0;
     margin: 0;
-    border-bottom: solid;
-    border-width: thin;
-    border-color: #b3b3b3;
 }
 
 .toggle-message {
@@ -24,19 +21,59 @@
     width: fit-content;
     padding: 1rem;
     font-weight: 600;
-    font-size: 1.5em;
+    font-size: 1.10rem;
     /* background-color:silver; */
 }
 
-.fal {
-    font-size: 2em; 
-    vertical-align: center;
+.toggle-body {
+    /* background-color: red; */
+}
+
+.checkbox-container {
+    /* background-color: yellow; */
+    padding: 1.5rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    display: grid;
+    grid-template-columns: 1fr 6fr 3fr;
+    align-items: center;
+}
+
+.checkbox-label {
+    font-family: helvetica;
+    position: relative;
+    display: block;
+    width: fit-content;
     /* background-color: green; */
-    height:fit-content;
-    text-align: center;
-    vertical-align: middle;
-    margin-right: 20%;
-    color: grey;
+    font-size: 1.05rem;
+    font-weight: 600;
+    
+}
+
+i.far.fa-square-full:before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: 100%;
+    font-size: 1em;
+    width: 1rem;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    /* vendor prefixes omitted due to b
+
+    
+    /* position: relative;
+    top: 1rem;
+    left: 0;
+    right: 0;
+    margin-left: auto; */
+    margin-right: auto;
+   
+}
+
+.fa-square {
+    background-color:blueviolet;
 }
 
 .fa-chevron-circle-down:before {

@@ -2,7 +2,9 @@ import React, {Fragment, useState} from 'react';
 import Header from '../components/Header';
 import HeadNav from '../components/HeadNav';
 import ToggleMenu from '../components/ToggleMenu';
+import Footer from '../components/Footer';
 import '../App.css';
+
 function SubMenu(props) {
     // header
     // picklist values
@@ -14,7 +16,8 @@ function SubMenu(props) {
         <Fragment>
             <Header showLogo={true}/>
             <HeadNav header={header} />
-            <ToggleMenu picklistVals={picklistVals} />
+            <ToggleMenu message='Customize Your Meal' picklistVals={picklistVals} />
+            <Footer />
         </Fragment>
     )
 }
