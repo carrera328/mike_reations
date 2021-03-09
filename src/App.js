@@ -6,11 +6,8 @@ import SubMenu from './layouts/SubMenu';
 import {data} from './components/db';
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
-
 
 
 function App() {
@@ -20,9 +17,7 @@ function App() {
       <Route exact path="/menu" render={routeProps => <Menu heading="Inventory"/>}/>
       <Route exact path="/sub-menu/:name" render={routeProps => <SubMenu 
       header={routeProps.match.params.name}
-      picklistVals = {data.filter((record) => {
-        return record.name === routeProps.match.params.name;
-      })[0].picklistValues}
+      picklistVals = {data.filter((record) => record.name === routeProps.match.params.name)[0].picklistValues}
       />}/>
     </Router> 
   );

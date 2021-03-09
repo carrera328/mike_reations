@@ -60,20 +60,16 @@ i.far.fa-square-full:before {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    /* vendor prefixes omitted due to b
-
-    
-    /* position: relative;
-    top: 1rem;
-    left: 0;
-    right: 0;
-    margin-left: auto; */
     margin-right: auto;
    
 }
 
-.fa-square {
-    background-color:blueviolet;
+.fa-square-full::before {
+    background-color:black;
+}
+
+.fa-square-full::before {
+    background-color: inherit;
 }
 
 .fa-chevron-circle-down:before {
@@ -81,3 +77,46 @@ i.far.fa-square-full:before {
     font-weight: 300;
     vertical-align: middle;
 }
+
+.checkmark {
+    position: absolute;
+    margin: 0 auto;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: #eee;
+  }
+
+  input[type=checkbox] {
+	visibility: hidden;
+}
+
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #9673A6;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }

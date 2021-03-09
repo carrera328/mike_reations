@@ -12,7 +12,6 @@ function Menu(props) {
     const products = [];
     const  [loading, setLoading] = useState(false);
     const [readyForCheckout, setReady] = useState(false);
-         
 
     return (
        <Fragment>

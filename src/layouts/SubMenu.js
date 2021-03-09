@@ -6,12 +6,9 @@ import Footer from '../components/Footer';
 import '../App.css';
 
 function SubMenu(props) {
-    // header
-    // picklist values
-    // price
     const header = props.header || 'Item';
     const picklistVals = props.picklistVals;
-    console.log(picklistVals);
+    
     return (
         <Fragment>
             <Header showLogo={true}/>

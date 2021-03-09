@@ -2,14 +2,9 @@ import React, { Fragment, useState } from 'react'
 import '../App.css';
 import logo from '../images/mikereations_black_logo.png';
 import '../styles/Header.css';
-import Home from '../layouts/Home';
 
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
+
+import { Link } from "react-router-dom";
 
 
 export default function Header({message, showLogo}) {
