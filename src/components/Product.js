@@ -7,7 +7,6 @@ export function Product(props) {
     const name = props.name || 'Test';
     const desc = props.desc || 'Warm flaky, southern-style biscuits.';
     const price = props.price || 2.25
-    console.log(formatDesc(desc, 58));
     return (
         <Fragment>
             <div className='super'>

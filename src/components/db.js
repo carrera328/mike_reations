@@ -1,7 +1,7 @@
 export const data = [
     {
-        "id" : 0,
-        "name" : "Moonpies",
+            "id" : 0,
+            "name" : "Moonpies",
         "price" : 15.00,
         "description": "I\'ve been smoking for a long time why should I change? and they say the ecstacy fucks up your brain mane",
         "picklistValues": [

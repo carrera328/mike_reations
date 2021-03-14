@@ -13,3 +13,7 @@ export const initialToggleState = (arrOfObjects) => {
     })
     return returnObj;
 }
+
+export const turnIntoArray = (object) => {
+    
+}

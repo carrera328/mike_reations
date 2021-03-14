@@ -7,12 +7,7 @@ import '../App.css';
 import '../styles/Menu.css'
 
 function Menu(props) {
-    console.log(data);
     const heading = props.heading || 'Products';
-    const products = [];
-    const  [loading, setLoading] = useState(false);
-    const [readyForCheckout, setReady] = useState(false);
-
     return (
        <Fragment>
            <Header showLogo={true}/>
