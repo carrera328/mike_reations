@@ -5,7 +5,6 @@ import '../App.css';
 
 function ToggleMenu(props) {
     const picklistValues = props.picklistVals;
-    //console.log(picklistValues);
     const toggle = props.handler;
     
     // const [state, setState] = useState(picklistValues);

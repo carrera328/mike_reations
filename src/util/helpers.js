@@ -14,6 +14,9 @@ export const initialToggleState = (arrOfObjects) => {
     return returnObj;
 }
 
-export const turnIntoArray = (object) => {
+// export const turnIntoArray = (object) => {
+//     let arr = [];
+//     for (let i in object) {
     
-}
+// }
+

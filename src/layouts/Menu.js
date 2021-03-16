@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Header from '../components/Header';
-import Product from '../components/Product'
+import Product from '../components/Product';
+import Footer from '../components/Footer';
 import {Link} from 'react-router-dom'
 import {data} from '../components/db';
 import '../App.css';
@@ -22,6 +23,9 @@ function Menu(props) {
                 </Link>
             ))}
            </div>
+           {
+               props.continue && <Footer reference='mainMenu' message='Continue'/>
+           } 
        </Fragment>
     )
 }

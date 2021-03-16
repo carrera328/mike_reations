@@ -19,7 +19,6 @@ function SubMenu(props) {
     }
 
     const handleClick = (e) => {
-        //props.addCart(state);
         props.addCart({name : props.header, picklistValues : state});
     }
     
@@ -27,7 +26,7 @@ function SubMenu(props) {
         <Fragment>
             <Header showLogo={true}/>
             <HeadNav header={header}  />
-            <ToggleMenu message='Customize your meal' picklistVals={picklistVals} handler={ toggle }/>
+            <ToggleMenu message='Customize your meal' picklistVals={picklistVals} handler={toggle}/>
             <Footer handler={handleClick} />
         </Fragment>
     )
