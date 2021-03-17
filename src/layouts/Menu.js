@@ -24,8 +24,12 @@ function Menu(props) {
             ))}
            </div>
            {
-               props.continue && <Footer reference='mainMenu' message='Continue'/>
-           } 
+              props.continue && 
+                <Fragment>
+                    <Footer reference='mainMenu' message='Continue'/>
+                    <div className='ghost'></div>
+                </Fragment>
+           }    
        </Fragment>
     )
 }

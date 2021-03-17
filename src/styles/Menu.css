@@ -16,3 +16,7 @@ body {
     margin-bottom: 1rem;
     font-weight: 700;
 }
+
+.ghost {
+    height: 5rem;
+}

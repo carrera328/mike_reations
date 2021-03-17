@@ -6,7 +6,7 @@ import plc from '../images/mikereations_white_logo.png';
 export function Product(props) {
     const name = props.name || 'Test';
     const desc = props.desc || 'Warm flaky, southern-style biscuits.';
-    const price = props.price || 2.25
+    const price = props.price || 2.25;
     return (
         <Fragment>
             <div className='super'>
