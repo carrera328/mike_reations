@@ -25,10 +25,10 @@ function Menu(props) {
            </div>
            {
               props.continue && 
-                <Fragment>
-                    <Footer reference='mainMenu' message='Continue'/>
-                    <div className='ghost'></div>
-                </Fragment>
+                    <Fragment>
+                        <Footer url='/customer-info' reference='mainMenu' message='Continue'/>
+                        <div className='ghost'></div>
+                    </Fragment>
            }    
        </Fragment>
     )

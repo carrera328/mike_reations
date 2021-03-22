@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react';
 import Home from './layouts/Home';
 import Menu from './layouts/Menu';
 import SubMenu from './layouts/SubMenu';
+import CustomerInfo from './layouts/CustomerInfo';
 import {data} from './components/db';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import {useContinue} from './hooks/stateHooks';
@@ -46,6 +47,14 @@ function App() {
           picklistVals = {data.filter((record) => record.name === routeProps.match.params.name)[0].picklistValues}
           addCart = {handleAddCart}
         />}
+      />
+      <Route 
+        exact path="/customer-info"
+        render={routeProps => 
+          <CustomerInfo 
+            
+          />
+        }
       />
     </Router> 
   );

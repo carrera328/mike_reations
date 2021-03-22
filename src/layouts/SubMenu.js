@@ -27,7 +27,7 @@ function SubMenu(props) {
             <Header showLogo={true}/>
             <HeadNav header={header}  />
             <ToggleMenu message='Customize your meal' picklistVals={picklistVals} handler={toggle}/>
-            <Footer handler={handleClick} />
+            <Footer url='/menu' handler={handleClick} />
         </Fragment>
     )
 }
