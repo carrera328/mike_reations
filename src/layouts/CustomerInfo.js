@@ -11,7 +11,7 @@ function CustomerInfo() {
            <Header showLogo={true}/>
            <HeadNav header='Customer Details'/>
            <CustomerForm />
-           <Footer url='/' message='Continue'/>
+           <Footer url='/location' message='Continue'/>
         </Fragment>
     )
 }

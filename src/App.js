@@ -4,6 +4,7 @@ import Home from './layouts/Home';
 import Menu from './layouts/Menu';
 import SubMenu from './layouts/SubMenu';
 import CustomerInfo from './layouts/CustomerInfo';
+import Location from './layouts/Location';
 import {data} from './components/db';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import {useContinue} from './hooks/stateHooks';
@@ -52,9 +53,11 @@ function App() {
         exact path="/customer-info"
         render={routeProps => 
           <CustomerInfo 
-            
           />
         }
+      />
+      <Route
+        exact path="/location" render={routeProps => <Location />}
       />
     </Router> 
   );

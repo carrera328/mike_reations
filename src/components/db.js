@@ -1,3 +1,4 @@
+import {v4 as ass } from 'uuid';
 export const data = [
     {
             "id" : 0,
@@ -88,3 +89,27 @@ export const data = [
         
     }
 ];
+
+export const addresses = [
+    {
+        id: ass(),
+        street: '2541 W. 47th St',
+        city: 'Chicago',
+        state_province: 'IL',
+        zip: '60631'
+    },
+    {
+        id: ass(),
+        street: '2251 W. Washington St',
+        city: 'Indianapolis',
+        state_province: 'IN',
+        zip: '46222'
+    },
+    {
+        id: ass(),
+        street: '2380 Jefferson Terrace',
+        city: 'East Point',
+        state_province: 'GA',
+        zip: '30433'
+    }
+]
