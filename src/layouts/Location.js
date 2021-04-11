@@ -25,7 +25,43 @@ function Location() {
     const [state, setState] = useState({loading: false, useLocation: false, query : ''});
     const [loading, setLoading] = useState(false);
     // functions
-    const getLocation = async () => {
+    const getAddressInput = async (e) => {
+        setState(prevState => ({
+            ...prevState,
+            loading: true
+        }));
+        
+        e.preventDefault();
+        console.log(e.target.value);
+
+        if (e.keyCode === 13 && e.target.value.length > 4) {
+            console.log(e.keyCode)
+            await setState(prevState => ({
+                ...prevState,
+                query: e.target.value
+            }));
+
+            const res = await fetch(`${process.env.REACT_APP_BASE_URL}q=${e.target.value}&key=${process.env.REACT_APP_OCD_API_KEY}&language=en&pretty=1`).then(data => data.json());
+            const results = res.results[0];
+            console.log(results);
+            await setUserLocale({
+                latitude: results.geometry.lat, 
+                longitude: results.geometry.lng
+            });
+
+            setState(prevState => ({
+                ...prevState,
+                useLocation: true,
+                loading : false
+            }));
+            
+        }
+        
+    }
+
+    const getLocation = async (q) => {
+        q = 'Chicago Illinois' || q;
+        
         setState(prevState => ({
             ...prevState,
             loading: true
@@ -38,35 +74,36 @@ function Location() {
             
         // }());
         
-    const res = await fetch(`https://api.opencagedata.com/geocode/v1/json?q=Indianapolis&key=${process.env.REACT_APP_OCD_API_KEY}&language=en&pretty=1`).then(data => data.json());
-    const results = res.results;
-    console.log(results)
+        const res = await fetch(`${process.env.REACT_APP_BASE_URL}q=${q}&key=${process.env.REACT_APP_OCD_API_KEY}&language=en&pretty=1`).then(data => data.json());
+        const results = res.results;
+        console.log(results)
 
-    if (navigator.geolocation) {
-        await navigator.geolocation.getCurrentPosition(position=>{
-            console.log(position.coords.latitude);
-            console.log(position.coords.longitude);
-            setUserLocale({
-                latitude: position.coords.latitude, 
-                longitude: position.coords.longitude
+        if (navigator.geolocation) {
+            await navigator.geolocation.getCurrentPosition(position=>{
+                console.log(position.coords.latitude);
+                console.log(position.coords.longitude);
+                setUserLocale({
+                    latitude: position.coords.latitude, 
+                    longitude: position.coords.longitude
+                });
             });
-        });
-        setState(prevState => ({
-            ...prevState,
-            useLocation: true,
-            loading : false
-        }));
-        console.log(state.loading) 
-    } else {
-        console.log('Geolocation not available');
-        }
+            setState(prevState => ({
+                ...prevState,
+                useLocation: true,
+                loading : false
+            }));
+            console.log(state.loading) 
+        } else {
+            console.log('Geolocation not available');
+            }
     }
+
 
     return (
         <div className='location-container'>
             <Header showLogo={true} />
             <HeadNav header='Delivery Information' />
-            <AddressList onClick={getLocation} />
+            <AddressList onkeyup={getAddressInput} onClick={getLocation} />
             {   
                 // loading
                 state.loading &&  <HashLoader css={override}/>
@@ -82,7 +119,8 @@ function Location() {
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <MapComponent center={[userLocale.latitude, userLocale.longitude]} zoom={14}/>
+                <MapComponent center={[userLocale.latitude, userLocale.longitude]} zoom={18}/>
+                <Marker position={[userLocale.latitude, userLocale.longitude]}/>
             </MapContainer>
             }
             <Fragment>

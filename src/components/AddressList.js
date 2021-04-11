@@ -9,11 +9,11 @@ function AddressList(props) {
     console.log(props);
 
     return (
-        <div className='address-container' onClick={props.onClick}>
+        <div className='address-container' >
             <div className='address-item'>
-                <input className='address-input' type='text' placeholder='Enter a new address' /> 
+                <input id='address-input' onKeyUp={props.onkeyup} className='address-input' type='text' placeholder='Enter a new address' /> 
             </div>
-            <div className='address-item'>
+            <div onClick={props.onClick} className='address-item'>
                 <i class="fas fa-location-arrow"></i> 
                 <div className='address-details helvetica'>
                     <h3>Use Location</h3>
