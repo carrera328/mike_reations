@@ -22,11 +22,9 @@ function Location() {
 `;
 
     const [userLocale, setUserLocale] = useState({latitude : 42.28, longitude: -83.1581});
-    //  useEffect(() => {
-    //     getLocation();
-    // }, []);
     const [state, setState] = useState({loading: false, useLocation: false, query : ''});
     const [loading, setLoading] = useState(false);
+    // functions
     const getLocation = async () => {
         setState(prevState => ({
             ...prevState,
@@ -69,7 +67,6 @@ function Location() {
             <Header showLogo={true} />
             <HeadNav header='Delivery Information' />
             <AddressList onClick={getLocation} />
-            
             {   
                 // loading
                 state.loading &&  <HashLoader css={override}/>
