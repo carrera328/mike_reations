@@ -4,11 +4,12 @@ import {addresses} from '../components/db';
 import '../styles/Forms.css';
 import '../App.css';
 
-function AddressList() {
+function AddressList(props) {
     console.log(addresses);
+    console.log(props);
 
     return (
-        <div className='address-container'>
+        <div className='address-container' onClick={props.onClick}>
             <div className='address-item'>
                 <input className='address-input' type='text' placeholder='Enter a new address' /> 
             </div>
