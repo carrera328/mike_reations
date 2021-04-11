@@ -1,4 +1,69 @@
 .address-container {
-    padding: 2.5%;
+    padding: 0;
     margin: 0;
+}
+
+.address-item {
+    height: 7em;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    border-bottom: solid;
+    border-width: thin;
+    border-color: #b3b3b3;
+}
+
+.address-details {
+    height: fit-content;
+    align-self: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    
+    
+}
+
+.address-details h3,p {
+    margin: 0;
+    font-weight: 500;
+}
+
+.address-details h3 {
+    font-size: 1.15em;
+}
+
+.address-details p {
+    font-size: .85em;
+    color: #B3B3B3; 
+}
+
+i.fas.fa-location-arrow {
+    /* background-color: red; */
+    position: relative;
+}
+
+i.fas.fa-location-arrow::before {
+    font-size: 1.75em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+
+
+input.address-input {
+    height: 60%;
+    width: 85%;
+    margin: auto;
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    bottom: 0; 
+    right: 0;
+    border: none;
+    font-size: 1.10em;
+    background: rgba(179,179,179,0.25);
 }

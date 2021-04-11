@@ -55,3 +55,15 @@ body {
   border-width: thin;
   border-color: #b3b3b3;
 }
+
+.leaflet-container {
+  width: 100%;
+  height: 30rem;
+}
+
+.map-button {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+}
+

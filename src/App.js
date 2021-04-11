@@ -22,7 +22,6 @@ function App() {
   }, [cart]);
 
   const handleAddCart = (item) => {
-    //cart.push(item);
     setCart(prevState => [...prevState, item])
     console.log('--CART--');
     console.log(cart);
