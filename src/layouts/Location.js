@@ -25,7 +25,7 @@ function Location() {
     //  useEffect(() => {
     //     getLocation();
     // }, []);
-    const [state, setState] = useState({loading: false, useLocation: false});
+    const [state, setState] = useState({loading: false, useLocation: false, query : ''});
     const [loading, setLoading] = useState(false);
     const getLocation = async () => {
         setState(prevState => ({
@@ -39,7 +39,7 @@ function Location() {
         //     return res;
             
         // }());
-        console.log(process.env.REACT_APP)
+        
     const res = await fetch(`https://api.opencagedata.com/geocode/v1/json?q=Indianapolis&key=${process.env.REACT_APP_OCD_API_KEY}&language=en&pretty=1`).then(data => data.json());
     const results = res.results;
     console.log(results)
@@ -69,12 +69,15 @@ function Location() {
             <Header showLogo={true} />
             <HeadNav header='Delivery Information' />
             <AddressList onClick={getLocation} />
-           
-
-            {
+            
+            {   
+                // loading
                 state.loading &&  <HashLoader css={override}/>
             }
-            { state.useLocation && <MapContainer 
+
+            { 
+                //map 
+                state.useLocation && <MapContainer 
                 center={[userLocale.latitude, userLocale.longitude]} 
                 zoom={8}
                 scrollWheelZoom={false}>
@@ -89,7 +92,6 @@ function Location() {
                 <Footer url='/customer-info' reference='mainMenu' message='Continue'/>
                 <div className='ghost'></div>
             </Fragment>
-             
         </div>
     )
 }
