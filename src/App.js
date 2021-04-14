@@ -8,6 +8,7 @@ import Location from './layouts/Location';
 import {data} from './components/db';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import {useContinue} from './hooks/stateHooks';
+import { ToastProvider } from 'react-toast-notifications';
 
 
 function App() {
@@ -27,38 +28,38 @@ function App() {
     console.log(cart);
   }
 
-
-  
   return (
-    <Router>
-      <Route exact path="/" component={Home}/> 
-      <Route exact path="/menu" render={routeProps => 
-        <Menu 
-          heading="Menu" 
-          continue={showContinue}
-          setCont={setShowCont}
-        />}
-      />
-      <Route 
-      exact path="/sub-menu/:name" 
-      render={routeProps => 
-        <SubMenu 
-          header={routeProps.match.params.name} 
-          picklistVals = {data.filter((record) => record.name === routeProps.match.params.name)[0].picklistValues}
-          addCart = {handleAddCart}
-        />}
-      />
-      <Route 
-        exact path="/customer-info"
+    <ToastProvider>
+      <Router>
+        <Route exact path="/" component={Home}/> 
+        <Route exact path="/menu" render={routeProps => 
+          <Menu 
+            heading="Menu" 
+            continue={showContinue}
+            setCont={setShowCont}
+          />}
+        />
+        <Route 
+        exact path="/sub-menu/:name" 
         render={routeProps => 
-          <CustomerInfo 
-          />
-        }
-      />
-      <Route
-        exact path="/location" render={routeProps => <Location />}
-      />
-    </Router> 
+          <SubMenu 
+            header={routeProps.match.params.name} 
+            picklistVals = {data.filter((record) => record.name === routeProps.match.params.name)[0].picklistValues}
+            addCart = {handleAddCart}
+          />}
+        />
+        <Route 
+          exact path="/customer-info"
+          render={routeProps => 
+            <CustomerInfo 
+            />
+          }
+        />
+        <Route
+          exact path="/location" render={routeProps => <Location />}
+        />
+      </Router> 
+    </ToastProvider>
   );
 }
 

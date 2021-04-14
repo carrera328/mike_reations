@@ -4,7 +4,6 @@ import Header from '../components/Header';
 import HeadNav from '../components/HeadNav';
 import CustomerForm from '../components/CustomerForm';
 
-
 function CustomerInfo() {
     return (
         <Fragment>

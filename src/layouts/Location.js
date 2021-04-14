@@ -8,46 +8,51 @@ import { css } from "@emotion/react";
 import HashLoader from "react-spinners/HashLoader";
 import PacmanLoader from "react-spinners/PacmanLoader";
 import MapComponent from '../components/MapComponent';
-import opencagedata from 'opencage-api-client';
+import {useToasts} from 'react-toast-notifications';
 import '../App.css';
 
 function Location() {
-
-  const override = css`
-  display: block;
-  margin: 0 auto;
-  position: relative;
-  border-color: red;
-  height: 30rem;
-`;
+    const override = css`
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        border-color: red;
+        height: 30rem;
+    `;    
 
     const [userLocale, setUserLocale] = useState({latitude : 42.28, longitude: -83.1581});
     const [state, setState] = useState({loading: false, useLocation: false, query : ''});
     const [loading, setLoading] = useState(false);
+    const {addToast} = useToasts();
+
     // functions
     const getAddressInput = async (e) => {
-        setState(prevState => ({
+        await setState(prevState => ({
             ...prevState,
             loading: true
         }));
         
         e.preventDefault();
-        console.log(e.target.value);
-
         if (e.keyCode === 13 && e.target.value.length > 4) {
             console.log(e.keyCode)
             await setState(prevState => ({
                 ...prevState,
                 query: e.target.value
             }));
-
-            const res = await fetch(`${process.env.REACT_APP_BASE_URL}q=${e.target.value}&key=${process.env.REACT_APP_OCD_API_KEY}&language=en&pretty=1`).then(data => data.json());
+            
+            const res = await fetch(`${process.env.REACT_APP_BASE_URL}q=${e.target.value}&key=${process.env.REACT_APP_OCD_API_KEY}&language=en&pretty=1`).then(data => data.json()).catch(e => console.log(e.message()));
+            console.log(res);
             const results = res.results[0];
             console.log(results);
-            await setUserLocale({
-                latitude: results.geometry.lat, 
-                longitude: results.geometry.lng
-            });
+            if (results) {
+                await setUserLocale({
+                    latitude: results.geometry.lat, 
+                    longitude: results.geometry.lng
+                });
+            } else {
+                addToast('Fuck you guy', { appearance: 'success' });
+            }
+            
 
             setState(prevState => ({
                 ...prevState,
@@ -66,13 +71,6 @@ function Location() {
             ...prevState,
             loading: true
         }));
-        console.log(loading);
-        // (async function grab() {
-        //     let res = await fetch('https://api.opencagedata.com/geocode/v1/json?q=Indianapolis%20Indiana&key=60cdc5bd701147d7a006992c264eafbc&language=en&pretty=1')
-        //     .then(data => data.json().then(data => console.log(data.results[0].geometry)));
-        //     return res;
-            
-        // }());
         
         const res = await fetch(`${process.env.REACT_APP_BASE_URL}q=${q}&key=${process.env.REACT_APP_OCD_API_KEY}&language=en&pretty=1`).then(data => data.json());
         const results = res.results;
@@ -111,7 +109,7 @@ function Location() {
 
             { 
                 //map 
-                state.useLocation && <MapContainer 
+               !state.loading && state.useLocation && <MapContainer 
                 center={[userLocale.latitude, userLocale.longitude]} 
                 zoom={8}
                 scrollWheelZoom={false}>
@@ -124,7 +122,7 @@ function Location() {
             </MapContainer>
             }
             <Fragment>
-                <Footer url='/customer-info' reference='mainMenu' message='Continue'/>
+                <Footer url='/' reference='mainMenu' message='Continue'/>
                 <div className='ghost'></div>
             </Fragment>
         </div>
