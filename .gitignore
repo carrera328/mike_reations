@@ -25,10 +25,4 @@ yarn-error.log*
 
 localhost-key.pem
 localhost.pem
-package-lock.json
-
-
-
-package.json
-package-lock.json
 .env
