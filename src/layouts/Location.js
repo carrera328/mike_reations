@@ -39,8 +39,8 @@ function Location() {
                 ...prevState,
                 query: e.target.value
             }));
-            
-            const res = await fetch(`${process.env.REACT_APP_BASE_URL}q=${e.target.value}&key=${process.env.REACT_APP_OCD_API_KEY}&language=en&pretty=1`).then(data => data.json()).catch(e => console.log(e.message()));
+                    
+            const res = await fetch(`${process.env.REACT_APP_OPEN_CAGE_API_BASE_URL}q=${e.target.value}&key=${process.env.REACT_APP_OCD_API_KEY}&language=en&pretty=1`).then(data => data.json()).catch(e => console.log(e.message()));
             console.log(res);
             const results = res.results[0];
             console.log(results);
@@ -72,7 +72,7 @@ function Location() {
             loading: true
         }));
         
-        const res = await fetch(`${process.env.REACT_APP_BASE_URL}q=${q}&key=${process.env.REACT_APP_OCD_API_KEY}&language=en&pretty=1`).then(data => data.json());
+        const res = await fetch(`${process.env.REACT_APP_OPEN_CAGE_API_BASE_URL}q=${q}&key=${process.env.REACT_APP_OCD_API_KEY}&language=en&pretty=1`).then(data => data.json());
         const results = res.results;
         console.log(results)
 
