@@ -6,6 +6,7 @@ import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 
 function MapComponent(props) {
     const map = useMap();
+    console.log(map);
     console.log('map center: ', map.getCenter());
     map.setView(props.center, props.zoom);
     return null;
