@@ -7,7 +7,8 @@ import {
     Link
   } from "react-router-dom";
 import Header from '../components/Header';
-import branding from '../images/mikereations_white_logo.png';
+import branding from '../images/mikereations_white_logo.svg';
+
 import '../styles/Home.css';
 import '../App.css';
 
